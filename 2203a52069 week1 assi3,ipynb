@@ -1,0 +1,95 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "aOsNM9HkUXwl",
+        "outputId": "856efb9e-309b-458d-98b8-2d4a216235a4"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Data from Excel:\n",
+            "    Table 1  Unnamed: 1 Unnamed: 2\n",
+            "0      name        Htno    Surname\n",
+            "1  Praneeth  2203A52069          A\n",
+            "2   Vennala  2203A52690          A\n",
+            "3   Ayushi   2203A52609          A\n",
+            "4     Comie  2203A51069          P\n",
+            "\n",
+            "Data from CSV:\n",
+            "    Table 1  Unnamed: 1 Unnamed: 2  Unnamed: 3  Unnamed: 4  Unnamed: 5\n",
+            "0      name        Htno    Surname         NaN         NaN         NaN\n",
+            "1  Praneeth  2203A52069          A         NaN         NaN         NaN\n",
+            "2   Vennala  2203A52690          A         NaN         NaN         NaN\n",
+            "3   Ayushi   2203A52609          A         NaN         NaN         NaN\n",
+            "4     Comie  2203A51069          P         NaN         NaN         NaN\n",
+            "\n",
+            "Data from TSV:\n",
+            "    Table 1  Unnamed: 1 Unnamed: 2  Unnamed: 3  Unnamed: 4  Unnamed: 5\n",
+            "0      name        Htno    Surname         NaN         NaN         NaN\n",
+            "1  Praneeth  2203A52069          A         NaN         NaN         NaN\n",
+            "2   Vennala  2203A52690          A         NaN         NaN         NaN\n",
+            "3   Ayushi   2203A52609          A         NaN         NaN         NaN\n",
+            "4     Comie  2203A51069          P         NaN         NaN         NaN\n",
+            "\n",
+            "Data from URL:\n",
+            "    Table 1  Unnamed: 1 Unnamed: 2  Unnamed: 3  Unnamed: 4  Unnamed: 5\n",
+            "0      name        Htno    Surname         NaN         NaN         NaN\n",
+            "1  Praneeth  2203A52069          A         NaN         NaN         NaN\n",
+            "2   Vennala  2203A52690          A         NaN         NaN         NaN\n",
+            "3   Ayushi   2203A52609          A         NaN         NaN         NaN\n",
+            "4     Comie  2203A51069          P         NaN         NaN         NaN\n"
+          ]
+        }
+      ],
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "# Read Excel file\n",
+        "data_excel = pd.read_excel('/content/PRANEETH1.xlsx')\n",
+        "\n",
+        "# Read CSV file\n",
+        "data_csv = pd.read_csv('/content/PRANEETH2.csv')\n",
+        "\n",
+        "# Read TSV file (Tab-separated values)\n",
+        "data_tsv = pd.read_csv('/content/PRANEETH3.tsv', sep='\\t')\n",
+        "\n",
+        "print(\"Data from Excel:\")\n",
+        "print(data_excel)\n",
+        "\n",
+        "print(\"\\nData from CSV:\")\n",
+        "print(data_csv)\n",
+        "\n",
+        "print(\"\\nData from TSV:\")\n",
+        "print(data_tsv)\n",
+        "\n",
+        "# Read data from URL (GitHub raw content)\n",
+        "url = 'https://raw.githubusercontent.com/praneethalla/AIML-/main/PRANEETH2.csv'\n",
+        "df_url = pd.read_csv(url)\n",
+        "print(\"\\nData from URL:\")\n",
+        "print(df_url)\n"
+      ]
+    }
+  ]
+}
